@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class base{//abstract class
+    public:
+	int x;
+	int y;
+	base(){ //constructor in  abstract class
+		x=30;
+		y=40;
+	}
+	virtual void add()=0;//pure virtual func
+	
+};
+class derived:public base{
+	public:
+		virtual void add(){ //overriding of pure virtual func so not an abstract class
+			cout<<"sum is "<<x+y<<endl;
+		}
+};
+int main(){
+	derived d;
+	d.add();
+	return 0;
+}
